@@ -1,0 +1,46 @@
+{
+    "title": "Stellar News and Updates",
+    "description": "Stellar Web for News And Updates [Mostly for Launcher JSON]",
+    "items": [
+
+        {
+            "Title": "Private Test's in Stellar",
+            "description": "We are currently testing the private test's in Stellar for a fresh release!",
+            "date" : "2024-01-31",
+            "image": "l.png",
+            "gradient" : true,
+            "color": "#34e718",
+            "grcolor": "#2d832d",
+            "isold" : false
+
+        },
+        {
+            "Title": "Have you joined our server?",
+            "description": "We are giving more updates about stellar development on our discord server, so join!",
+            "date" : "2024-01-31",
+            "image": "Discord.png",
+            "gradient" : false,
+            "color": "#7289da",
+            "isold" : false
+        },
+
+        {
+            "Title": "[OLD] Have you seen issues?",
+            "description": "Report them to us!",
+            "date" : "2024-01-29",
+            "image": "Issues.png",
+            "color": "#ff5e00",
+            "isold" : true,
+            "gradient" : false
+        },
+        {
+            "Title": "[OLD] News without Launcher",
+            "description": "We have released this website to see news without opening the launcher!",
+            "date" : "2024-01-28",
+            "image": "News.png",
+            "color": "#0051FF",
+            "isold" : true,
+            "gradient" : false
+        }
+    ]
+}

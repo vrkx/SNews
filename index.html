@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar News</title>
+ 
+    <script src="https://kit.fontawesome.com/e1cea92282.js" crossorigin="anonymous"></script>
+
+    <style>
+
+
+body {
+  background : linear-gradient(#007c3e,#031b10);
+  background-size: 200% 200%;
+  height: 200px;
+
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+
+
+.container {
+  background-color: #101010ee;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+a {
+
+  
+    margin: 0;
+    /* height: 102px; */
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-decoration: auto;
+
+
+}
+
+/* Ensure the body and html take up the full height and width */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Optional: Add some spacing for the main content */
+main {
+  padding: 20px;
+}
+.olds {
+
+opacity: 0.5;
+
+}
+
+
+.box .content {
+  flex-grow: 1; /* Allow the content to grow and fill the remaining space */
+  word-wrap: break-word; /* Ensure text wraps within the container */
+}
+
+.Tcontainer {
+  margin-top: 20px;
+  align-self: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 500px;
+
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mes {
+
+opacity: 10%;
+text-align: center;
+font-size: 13px;
+}
+
+.Tcontainer p {
+  margin: 0;
+
+  
+  border-radius: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+.box {
+
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  box-shadow: 0 0 20px rgba(44, 44, 44, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.5);
+}
+
+.date {
+
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0.3;
+}
+
+
+.box img {
+  width: 100px;
+  height: 100px;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .news-item {
+    width: 100%;
+  }
+}
+
+    </style>
+
+</head>
+<header>
+    <!-- Logo -->
+   
+
+    
+</header>
+<body>
+   
+    <div class="Tcontainer">
+    <h1> <i class="fa-solid fa-newspaper"></i> Stellar News and Updates</h1>
+    <p>Stellar Web for News And Updates [Mostly for Launcher JSON]</p>
+    </div>
+
+    <div class="NewsContainer">
+
+        <div class="container">
+            
+            <p style="text-align: center; font-weight: bold; font-size: 17px;" > <i class="fa-solid fa-triangle-exclamation"></i>   This website can have changes or errors at any time</p>
+            
+        </div>
+
+        
+    
+        
+        <div class="container">
+            
+            <div id="oitems"></div>
+        </div>
+
+      
+       
+
+    </div>
+
+    
+    <h2 class="ooter">made with ❤ by vrkx, for stellar </h2>
+
+
+ 
+    <script src="Main.js"></script>
+    <script>async function fetchData() {
+        try {
+            const response = await fetch('News.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            displayData(data);
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
+    }
+    
+    
+    function displayData(data) {
+    
+        const itemsContainer = document.getElementById('oitems');
+        data.items.forEach(item => {
+            const box = document.createElement('div');
+            
+            if (item.isold) {
+    // Set the opacity of the target element to 0.5
+    box.style.opacity = "0.4";
+    } else {
+    // Optional: Reset opacity if isOld is false
+    box.style.opacity = "1";
+    }
+    
+            box.className = 'box';
+          
+            if (item.gradient) {
+    
+                box.style.background = `linear-gradient(${item.color}, ${item.grcolor})`;
+    
+             }
+    
+             else {
+                box.style.backgroundColor = item.color;
+                };
+            
+            const image = document.createElement('img');
+            image.src = item.image;
+            image.alt = item.description;
+    
+            
+    
+            const content = document.createElement('div');
+            content.innerHTML = `<h2>${item.Title}</h2><p>${item.description}</p> <p class="date">${item.date}</p>`;
+            
+            box.appendChild(image);
+            box.appendChild(content);
+            itemsContainer.appendChild(box);
+        });
+    }
+    
+    
+    fetchData();
+    </script>
+</body>
+
+
+
+
+</html>
