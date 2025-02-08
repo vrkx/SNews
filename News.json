@@ -4,6 +4,32 @@
     "items": [
 
         {
+            "Title": "We are preparing the launcher!",
+            "description": "We are starting to configure and prepare the launcher for the release of Stellar!",
+            "date" : "2024-01-31",
+            "image": "Config.png",
+            "gradient" : true,
+            "color": "#104070",
+            "grcolor": "#2d832d",
+            "isold" : false,
+
+            "tags": ["!!!", "LAUNCHER"]
+        },
+
+        {
+            "Title": "LauncherV1 won't be updated.",
+            "description": "We are starting to work on a LauncherV2, so the current launcher won't be updated anymore unless it's for important bug fixes.",
+            "date" : "2024-01-31",
+            "image": "Issues.png",
+            "gradient" : true,
+            "color": "#701010",
+            "grcolor": "#901010",
+            "isold" : false,
+
+            "tags": ["!!!", "LAUNCHER","V2", "!!!"]
+        },
+
+        {
             "Title": "Private Test's in Stellar",
             "description": "We are currently testing the private test's in Stellar for a fresh release!",
             "date" : "2024-01-31",
@@ -11,7 +37,9 @@
             "gradient" : true,
             "color": "#34e718",
             "grcolor": "#2d832d",
-            "isold" : false
+            "isold" : true,
+
+            "tags": ["OLD", "TESTING"]
 
         },
         {
@@ -21,26 +49,32 @@
             "image": "Discord.png",
             "gradient" : false,
             "color": "#7289da",
-            "isold" : false
+            "isold" : true,
+
+            "tags": ["OLD","DISCORD"]
         },
 
         {
-            "Title": "[OLD] Have you seen issues?",
+            "Title": "Have you seen issues?",
             "description": "Report them to us!",
             "date" : "2024-01-29",
             "image": "Issues.png",
             "color": "#ff5e00",
             "isold" : true,
-            "gradient" : false
+            "gradient" : false,
+
+            "tags": ["OLD", "TIP"]
         },
         {
-            "Title": "[OLD] News without Launcher",
+            "Title": "News without Launcher",
             "description": "We have released this website to see news without opening the launcher!",
             "date" : "2024-01-28",
             "image": "News.png",
             "color": "#0051FF",
             "isold" : true,
-            "gradient" : false
+            "gradient" : false,
+
+            "tags": ["OLD", "BETA"]
         }
     ]
 }

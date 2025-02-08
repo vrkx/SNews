@@ -10,11 +10,44 @@
 
     <style>
 
+.tag{
 
-body {
+  background-color: #080808be;
+  border: #ffffff13 solid 2.5px;
+  border-radius: 50px;
+  padding: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin : 5px;
+  font-size: 13px;
+  width: 70px;
+  height: 80%;
+  text-align: center;
+  
+  
+}
+
+.tags {
+    display: flex
+;
+    top: 320px;
+    right: 90px;
+    width: 125px;
+    /* height: 35px; */
+    border-radius: 100px;
+    align-items: center;
+    align-content: center;
+    display: flex
+;   margin-bottom: 10px;
+    background-color: #08080800;
+    justify-content: center;
+}
+
+.BG{
+
   background : linear-gradient(#007c3e,#031b10);
   background-size: 200% 200%;
-  height: 200px;
+  
 
   display: flex;
   width: 100%;
@@ -23,9 +56,25 @@ body {
   align-items: center;
   font-family: Arial, sans-serif;
   color: white;
+  
+
 }
 
+body {
+  
 
+}
+
+h2{    
+  
+  backdrop-filter: blur(5px);
+    text-align: center;
+    background: #ffffff0f;
+    border-radius: 10px;
+    padding: 5px;
+    border: #fefefe1c solid;
+    
+}
 
 .container {
   background-color: #101010ee;
@@ -44,9 +93,16 @@ body {
   
   margin: 0;
   padding: 0;
+  
   box-sizing: border-box;
 }
 
+p{
+
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 5px;
+}
 
 
 a {
@@ -119,17 +175,20 @@ font-size: 13px;
 
 
 .box {
-
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-
-  box-shadow: 0 0 20px rgba(44, 44, 44, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    display: flex
+;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(44, 44, 44, 0.3);
+    transition: transform 0.3sease, box-shadow 0.3sease;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 
 
@@ -149,7 +208,7 @@ font-size: 13px;
 .box img {
   width: 100px;
   height: 100px;
-  margin-right: 15px;
+ 
   border-radius: 8px;
 }
 
@@ -174,7 +233,8 @@ font-size: 13px;
     
 </header>
 <body>
-   
+
+    <div class="BG">
     <div class="Tcontainer">
     <h1> <i class="fa-solid fa-newspaper"></i> Stellar News and Updates</h1>
     <p>Stellar Web for News And Updates [Mostly for Launcher JSON]</p>
@@ -204,7 +264,7 @@ font-size: 13px;
     
     <h2 class="ooter">made with ❤ by vrkx, for stellar </h2>
 
-
+  </div>
  
     <script src="Main.js"></script>
     <script>async function fetchData() {
@@ -226,7 +286,9 @@ font-size: 13px;
         const itemsContainer = document.getElementById('oitems');
         data.items.forEach(item => {
             const box = document.createElement('div');
-            
+            const tags = document.createElement('div');
+            tags.className = 'tags';
+            box.appendChild(tags); 
             if (item.isold) {
     // Set the opacity of the target element to 0.5
     box.style.opacity = "0.4";
@@ -256,6 +318,24 @@ font-size: 13px;
             const content = document.createElement('div');
             content.innerHTML = `<h2>${item.Title}</h2><p>${item.description}</p> <p class="date">${item.date}</p>`;
             
+         
+            item.tags.forEach(tag => {
+
+                const tagElement = document.createElement('div');
+             
+                tagElement.className = 'tag';
+                tags.appendChild(tagElement);
+
+                tagElement.innerHTML = tag;
+
+
+                
+                
+                
+               
+            });
+
+
             box.appendChild(image);
             box.appendChild(content);
             itemsContainer.appendChild(box);
