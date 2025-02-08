@@ -6,7 +6,7 @@
         {
             "Title": "We are preparing the launcher!",
             "description": "We are starting to configure and prepare the launcher for the release of Stellar!",
-            "date" : "2024-01-31",
+            "date" : "2024-02-7",
             "image": "Config.png",
             "gradient" : true,
             "color": "#104070",
@@ -19,7 +19,7 @@
         {
             "Title": "LauncherV1 won't be updated.",
             "description": "We are starting to work on a LauncherV2, so the current launcher won't be updated anymore unless it's for important bug fixes.",
-            "date" : "2024-01-31",
+            "date" : "2024-02-7",
             "image": "Issues.png",
             "gradient" : true,
             "color": "#701010",
